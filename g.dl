@@ -1,0 +1,4 @@
+
+p(G,op,X) :- generator(G), c(G,is,running), c(G,id,X), const(cg, MAX), X <= MAX.
+p(G,op,MAX) :- generator(G), c(G,is,running), c(G,id,X), const(cg, MAX), X > MAX.
+p(G,op,0) :- generator(G), c(G,is,not_running).
