@@ -1,0 +1,6 @@
+ % Sample system test case for veryifing predicate names
+
+c_in(sgenerator, not_running).
+c_in(sbattery, full).
+c_in(load, 20).
+p_in(pin, 15).
