@@ -1,0 +1,16 @@
+% Testfall 2 fuer Generator
+
+% Strombedarf von Generator: 30 (> Capacity)
+% Generator: laeuft
+
+% Ergebnis: Generator soll 20 (= Capacity) liefern
+
+generator(g).
+const(cg, 20).
+
+c(g, is, running).
+c(g, id, 30).
+
+expect_c(g, id, 30).
+expect_c(g, is, running).
+expect_p(g, op, 20).

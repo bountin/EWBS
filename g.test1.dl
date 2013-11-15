@@ -1,0 +1,16 @@
+% Testfall 1 fuer Generator
+
+% Strombedarf von Generator: 5
+% Generator: laeuft
+
+% Ergebnis: Generator soll 5 liefern
+
+generator(g).
+const(cg, 20).
+
+c(g, is, running).
+c(g, id, 5).
+
+expect_c(g, id, 5).
+expect_c(g, is, running).
+expect_p(g, op, 5).

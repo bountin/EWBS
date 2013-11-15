@@ -1,0 +1,16 @@
+% Testfall 3 fuer Generator
+
+% Strombedarf von Generator: 30 (> Capacity)
+% Generator: not running
+
+% Ergebnis: Generator soll 0 liefern
+
+generator(g).
+const(cg, 20).
+
+c(g, is, not_running).
+c(g, id, 30).
+
+expect_c(g, id, 30).
+expect_c(g, is, not_running).
+expect_p(g, op, 0).
