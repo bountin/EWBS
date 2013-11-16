@@ -1,0 +1,20 @@
+% test 5 for battery
+
+% state: full
+% input power: 10
+% demanded power: 25
+
+% exp. result: output of 20 (c+i)
+
+battery(b).
+const(cb, 10).
+
+c(b, is, full).
+c(b, id, 25).
+p(b, ip, 10).
+
+expect_c(b, id, 25).
+expect_c(b, is, full).
+expect_p(b, ip, 10).
+
+expect_p(b, op, 20).
