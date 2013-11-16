@@ -1,0 +1,17 @@
+
+empty_battery(B) 	:- battery(B), c(B,is,empty).
+half_full_battery(B) 	:- battery(B), c(B,is,half_full).
+full_battery(B)		:- battery(B), c(B,is,full).
+
+% Empty cases
+p(B,op,ID) :- empty_battery(B), p(B,ip,IP), c(B,id,ID), ID <= IP.
+p(B,op,IP) :- empty_battery(B), p(B,ip,IP), c(B,id,ID), ID > IP.
+
+% Half full
+p(B,op,ID) :- half_full_battery(B), p(B,ip,IP), c(B,id,ID), const(cb,CB), X = CB + IP, ID <= X.
+p(B,op,X)  :- half_full_battery(B), p(B,ip,IP), c(B,id,ID), const(cb,CB), X = CB + IP, ID > X.
+
+% Full
+p(B,op,IP) :- full_battery(B), p(B,ip,IP), c(B,id,ID), const(cb,CB), ID <= IP.
+p(B,op,ID) :- full_battery(B), p(B,ip,IP), c(B,id,ID), const(cb,CB), ID > IP, X = CB + IP, ID <= X.
+p(B,op,X)  :- full_battery(B), p(B,ip,IP), c(B,id,ID), const(cb,CB), X = CB + IP, ID > X.
