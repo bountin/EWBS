@@ -19,7 +19,7 @@ p(S,opb,DIFF) :- substation(S),
 	p(S,ipext,E),
 	L <= E,
 	DIFF = E - L.
-p(S,obp,0) :- substation(S),
+p(S,opb,0) :- substation(S),
 	c(S,il,L),
 	p(S,ipext,E),
 	L > E.
