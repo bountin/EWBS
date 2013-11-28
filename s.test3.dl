@@ -1,4 +1,4 @@
-% test 3 for subsystem
+% test 3 for substation
 
 % load: 5
 % external power: 5
@@ -8,7 +8,7 @@
 
 % exp. result: output of 5
 
-subsystem(s).
+substation(s).
 
 c(s,il,5).
 p(s,ipext,5).

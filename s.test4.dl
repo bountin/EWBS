@@ -1,4 +1,4 @@
-% test 4 for subsystem
+% test 4 for substation
 
 % load: 5
 % external power: 5
@@ -8,7 +8,7 @@
 
 % exp. result: output of 6 (ext 5 + gen 1 < 1.5*load)
 
-subsystem(s).
+substation(s).
 
 c(s,il,5).
 p(s,ipext,5).

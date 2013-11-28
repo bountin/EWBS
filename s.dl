@@ -1,12 +1,12 @@
 % OUTPUT DEMANDED GENERATOR
-c(S,odg,0) :- subsystem(S),
+c(S,odg,0) :- substation(S),
 	c(S,ig,not_running).
-c(S,odg,0) :- subsystem(S),
+c(S,odg,0) :- substation(S),
 	c(S,ig,running),
 	c(S,il,L),
 	p(S,ipext,E),
 	L < E.
-c(S,odg,DIFF) :- subsystem(S),
+c(S,odg,DIFF) :- substation(S),
 	c(S,ig,running),
 	c(S,il,L),
 	p(S,ipext,E),
@@ -14,24 +14,24 @@ c(S,odg,DIFF) :- subsystem(S),
 	DIFF = L - E.
 
 % OUTPUT POWER BATTERY
-p(S,opb,DIFF) :- subsystem(S),
+p(S,opb,DIFF) :- substation(S),
 	c(S,il,L),
 	p(S,ipext,E),
 	L <= E,
 	DIFF = E - L.
-p(S,obp,0) :- subsystem(S),
+p(S,obp,0) :- substation(S),
 	c(S,il,L),
 	p(S,ipext,E),
 	L > E.
 
 % OUTPUT DEMANDED BATTERY
-c(S,odb,0) :- subsystem(S),
+c(S,odb,0) :- substation(S),
 	c(S,ig,running).
-c(S,odb,0) :- subsystem(S),
+c(S,odb,0) :- substation(S),
 	c(S,il,L),
 	p(S,ipext,E),
 	L <= E.
-c(S,odb,DIFF) :- subsystem(S),
+c(S,odb,DIFF) :- substation(S),
 	c(S,ig,not_running),
 	c(S,il,L),
 	p(S,ipext,E),
@@ -39,19 +39,19 @@ c(S,odb,DIFF) :- subsystem(S),
 	DIFF = L - E.
 
 % OUTPUT POWER SYSTEM
-p(S,ops,P) :- subsystem(S), 
+p(S,ops,P) :- substation(S), 
 	c(S,il,L),
 	adjl(L,ADJL),
 	powsum(S,P),
 	ADJL > P.
-p(S,ops,ADJL) :- subsystem(S), 
+p(S,ops,ADJL) :- substation(S), 
 	c(S,il,L),
 	adjl(L,ADJL),
 	powsum(S,P),
 	ADJL <= P.
 
 % HELPING PREDICATES
-powsum(S,POWER) :- subsystem(S),
+powsum(S,POWER) :- substation(S),
 	p(S,ipext,IN),
 	p(S,ipg,G),
 	p(S,ipb,B), 
