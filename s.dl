@@ -55,11 +55,12 @@ powsum(S,POWER) :- substation(S),
 	p(S,ipext,IN),
 	p(S,ipg,G),
 	p(S,ipb,B), 
+	p(S,opb,OPB),
 	SUM1 = G + B,
-	POWER = SUM1 + IN.
+	SUM2 = SUM1 + IN,
+	POWER = SUM2 - OPB.
 
 adjl(L,ADJ) :-
 	X = L * 3,
 	ADJ = X / 2,
-	#int(L),
-	#int(ADJL).
+	#int(L).
