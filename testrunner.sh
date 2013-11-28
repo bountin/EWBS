@@ -6,7 +6,7 @@ OPTS='-N=75 component_tester.dl -filter=UNCOMPUTED_c,UNCOMPUTED_p,UNEXPECTED_c,U
 for CLASS in g b s;
 do
 	echo "----- Test class $CLASS ----"
-	for TEST in $CLASS.test* ;
+	for TEST in $CLASS.test* extTests/*/$CLASS.test*;
 	do
 		RES=`eval "$BIN $OPTS $CLASS.dl $TEST" | sed -e 's/DLV \[build .*//'`
 		COUNT=`eval echo '$RES' | wc -c`
