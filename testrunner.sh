@@ -3,7 +3,7 @@
 BIN='./dlv.i386-apple-darwin-iodbc'
 OPTS='-N=75 component_tester.dl -filter=UNCOMPUTED_c,UNCOMPUTED_p,UNEXPECTED_c,UNEXPECTED_p,DUPLICATED_c,DUPLICATED_p'
 
-for CLASS in g b;
+for CLASS in g b s;
 do
 	echo "----- Test class $CLASS ----"
 	for TEST in $CLASS.test* ;

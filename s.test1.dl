@@ -1,0 +1,28 @@
+% test 1 for subsystem
+
+% load: 0
+% external power: 0
+% battery power: 0
+% generator: running
+% generator power: 0
+
+% exp. result: output of 0
+
+subsystem(s).
+
+c(s,il,0).
+p(s,ipext,0).
+p(s,ipb,0).
+c(s,ig,running).
+p(s,ipg,0).
+
+expect_c(s,il,0).
+expect_p(s,ipext,0).
+expect_p(s,ipb,0).
+expect_c(s,ig,running).
+expect_p(s,ipg,0).
+
+expect_p(s,ops,0).
+expect_p(s,opb,0).
+expect_c(s,odg,0).
+expect_c(s,odb,0).

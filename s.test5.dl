@@ -1,0 +1,28 @@
+% test 5 for subsystem
+
+% load: 10
+% external power: 10
+% battery power: 0
+% generator: running
+% generator power: 20
+
+% exp. result: output of 15 (30 (ext+gen) > 1.5*load = 15)
+
+subsystem(s).
+
+c(s,il,10).
+p(s,ipext,10).
+p(s,ipb,0).
+c(s,ig,running).
+p(s,ipg,20).
+
+expect_c(s,il,10).
+expect_p(s,ipext,10).
+expect_p(s,ipb,0).
+expect_c(s,ig,running).
+expect_p(s,ipg,20).
+
+expect_p(s,ops,15).
+expect_p(s,opb,0).
+expect_c(s,odg,0).
+expect_c(s,odb,0).
