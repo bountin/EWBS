@@ -1,1 +1,3 @@
-:- ok(X), ab(X).
+:- ok(b), old_cells(b).
+:- ok(s), bad_battery_control(s).
+:- ok(g), needs_maintenance(g).

@@ -1,8 +1,7 @@
 ok(b).
-ab(b).
-
 ok(g).
-ab(g).
-
 ok(s).
-ab(s).
+
+bad_battery_control(s).
+needs_maintenance(g).
+old_cells(b).
