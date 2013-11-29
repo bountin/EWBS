@@ -1,0 +1,6 @@
+UNCOMPUTED_c(O, X) :- expect_c_out(O, X), not c_out(O, X).
+UNCOMPUTED_p(O, X) :- expect_p_out(O, X), not p_out(O, X).
+UNEXPECTED_c(O, X) :- c_out(O, X), not expect_c_out(O, X).
+UNEXPECTED_p(O, X) :- p_out(O, X), not expect_p_out(O, X).
+DUPLICATED_c(O, X, Y) :- c_out(O, X), c_out(O, Y), X < Y.
+DUPLICATED_p(O, X, Y) :- p_out(O, X), p_out(O, Y), X < Y.
