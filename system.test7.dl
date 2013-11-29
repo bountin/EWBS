@@ -1,0 +1,5 @@
+c_in(sgenerator,not_running).
+c_in(sbattery,full).
+c_in(load,10).
+p_in(pin,0).
+expect_p_out(pout,5).
