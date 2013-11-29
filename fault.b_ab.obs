@@ -1,0 +1,11 @@
+% Generator works as expected
+p(g,op,0).
+
+% Outputs of substation are correct
+c(s,odb,3).
+c(s,odg,0).
+p(s,opb,0).
+p(s,ops,12).
+
+% Output of the battery is incorrect!
+p(b,op,5).

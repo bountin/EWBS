@@ -1,0 +1,6 @@
+c_in(sgenerator,not_running).
+c_in(sbattery,half_full).
+c_in(load,10).
+p_in(pin,7).
+
+p_out(pout,12).
