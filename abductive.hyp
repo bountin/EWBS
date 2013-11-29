@@ -1,0 +1,8 @@
+ok(b).
+ab(b).
+
+ok(g).
+ab(g).
+
+ok(s).
+ab(s).
