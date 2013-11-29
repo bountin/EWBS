@@ -1,0 +1,3 @@
+p_out(pout,7).
+
+ok(g). ok(s).
