@@ -1,0 +1,25 @@
+const(cg,20).
+const(cb,5).
+
+substation(s).
+generator(g).
+battery(b).
+
+% substation inputs
+p(s,ipext,V) 	:- p_in(pin,V).
+c(s,il,V) 	:- c_in(load,V).
+c(s,ig,V)	:- c_in(sgenerator,V).
+p(s,ipb,V)	:- p(b,op,V).
+p(s,ipg,V)	:- p(g,op,V).
+
+% generator inputs
+c(g,is,V)	:- c_in(sgenerator,V).
+c(g,id,V)	:- c(s,odg,V).
+
+% battery inputs
+c(b,is,V)	:- c_in(sbattery,V).
+c(b,id,V)	:- c(s,odb,V).
+p(b,ip,V)	:- p(s,opb,V).
+
+% complete system output
+p_out(pout,V)	:- p(s,ops,V).
