@@ -1,6 +1,7 @@
 
 empty_battery(B) 	:- battery(B), c(B,is,empty).
-half_full_battery(B) 	:- battery(B), c(B,is,half_full).
+empty_battery(B) 	:- battery(B), c(B,is,half_full), old_cells(b).
+half_full_battery(B) 	:- battery(B), c(B,is,half_full), ok(b).
 full_battery(B)		:- battery(B), c(B,is,full).
 
 % Empty cases

@@ -38,7 +38,10 @@ c(S,odb,0) :- substation(S),
 	p(S,ipext,E),
 	L <= E,
 	not ab(S).
-c(S,odb,DIFF) :- substation(S),
+c(S,odb,D) :- substation(S), normal_demanded_battery_power(S,D), ok(S).
+c(S,odb,X) :- substation(S), normal_demanded_battery_power(S,D), X = D * 2, bad_battery_control(S).
+
+normal_demanded_battery_power(S,DIFF) :- substation(S),
 	c(S,ig,not_running),
 	c(S,il,L),
 	p(S,ipext,E),
